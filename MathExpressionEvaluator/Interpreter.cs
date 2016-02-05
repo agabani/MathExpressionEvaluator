@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using MathExpressionEvaluator.Expressions;
-using MathExpressionEvaluator.Expressions.Factory;
 
 namespace MathExpressionEvaluator
 {

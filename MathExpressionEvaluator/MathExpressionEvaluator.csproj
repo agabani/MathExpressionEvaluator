@@ -47,7 +47,9 @@
     <Compile Include="Expressions\Binary\Concrete\MultiplicationBinaryExpression.cs" />
     <Compile Include="Expressions\Binary\Concrete\PowerBinaryExpression.cs" />
     <Compile Include="Expressions\Binary\Concrete\SubtractionBinaryExpression.cs" />
-    <Compile Include="Expressions\Factory\ExpressionFactory.cs" />
+    <Compile Include="Expressions\ExpressionFactory.cs" />
+    <Compile Include="Expressions\Unary\Concrete\NotUnaryExpression.cs" />
+    <Compile Include="Expressions\Unary\UnaryExpression.cs" />
     <Compile Include="Notation.cs" />
     <Compile Include="Interpreter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

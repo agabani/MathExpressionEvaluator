@@ -1,7 +1,8 @@
 ﻿using System;
 using MathExpressionEvaluator.Expressions.Binary.Concrete;
+using MathExpressionEvaluator.Expressions.Unary.Concrete;
 
-namespace MathExpressionEvaluator.Expressions.Factory
+namespace MathExpressionEvaluator.Expressions
 {
     public class ExpressionFactory
     {
@@ -49,7 +50,7 @@ namespace MathExpressionEvaluator.Expressions.Factory
             switch (@operator)
             {
                 case "-":
-                    return new SubtractionBinaryExpression(new ValueExpression(0), operand);
+                    return new NotUnaryExpression(operand);
                 default:
                     throw new NotSupportedException(@operator);
             }
