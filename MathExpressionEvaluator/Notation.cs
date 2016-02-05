@@ -1,12 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text.RegularExpressions;
 
 namespace MathExpressionEvaluator
 {
     public class Notation
     {
-        private static readonly Regex Regex = new Regex("((\\d*\\.\\d+)|(\\d+)|([\\+\\-\\*/\\(\\)\\^]))");
         private IReadOnlyList<string> _infix;
         private IReadOnlyList<string> _postfix;
 
@@ -15,16 +13,10 @@ namespace MathExpressionEvaluator
             Expression = expression;
         }
 
+        public IReadOnlyList<string> Infix => _infix ?? (_infix = RegexExpressionParser.Accessor().Parse(Expression));
         public IReadOnlyList<string> Postfix => _postfix ?? (_postfix = ToPostfix(Infix));
 
-        public IReadOnlyList<string> Infix => _infix ?? (_infix = ToInfix(Expression));
-
         public string Expression { get; }
-
-        private static IReadOnlyList<string> ToInfix(string expression)
-        {
-            return (from object match in Regex.Matches(expression) select match.ToString()).ToList();
-        }
 
         private static IReadOnlyList<string> ToPostfix(IEnumerable<string> expression)
         {
@@ -116,27 +108,27 @@ namespace MathExpressionEvaluator
 
         private static bool IsOpenParentheses(string expression)
         {
-            return expression == "(";
+            return expression == Symbol.OpenParentheses;
         }
 
         private static bool IsCloseParentheses(string expression)
         {
-            return expression == ")";
+            return expression == Symbol.CloseParentheses;
         }
 
         private static bool IsExponent(string expression)
         {
-            return expression == "^";
+            return expression == Symbol.Power || expression == Symbol.SquareRoot;
         }
 
         public static bool IsMultiplication(string expression)
         {
-            return expression == "*" || expression == "/";
+            return expression == Symbol.Multiplication || expression == Symbol.Division;
         }
 
         public static bool IsAddition(string expression)
         {
-            return expression == "+" || expression == "-";
+            return expression == Symbol.Addition || expression == Symbol.Subtraction;
         }
     }
 }

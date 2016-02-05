@@ -49,10 +49,13 @@
     <Compile Include="Expressions\Binary\Concrete\SubtractionBinaryExpression.cs" />
     <Compile Include="Expressions\ExpressionFactory.cs" />
     <Compile Include="Expressions\Unary\Concrete\NotUnaryExpression.cs" />
+    <Compile Include="Expressions\Unary\Concrete\SquareRootUnaryExpression.cs" />
     <Compile Include="Expressions\Unary\UnaryExpression.cs" />
     <Compile Include="Notation.cs" />
     <Compile Include="Interpreter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegexExpressionParser.cs" />
+    <Compile Include="Symbol.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

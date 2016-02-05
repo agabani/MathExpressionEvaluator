@@ -31,13 +31,10 @@ namespace MathExpressionEvaluator
                         expressions.Push(expressionFactory.Create(expression));
                         break;
                     case 1:
-                        var operand = expressions.Pop();
-                        expressions.Push(expressionFactory.Create(expression, operand));
+                        expressions.Push(expressionFactory.Create(expression, expressions.Pop()));
                         break;
                     case 2:
-                        var operand2 = expressions.Pop();
-                        var operand1 = expressions.Pop();
-                        expressions.Push(expressionFactory.Create(expression, operand1, operand2));
+                        expressions.Push(expressionFactory.Create(expression, expressions.Pop(), expressions.Pop()));
                         break;
                     default:
                         throw new NotSupportedException();
