@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MathExpressionEvaluator", "MathExpressionEvaluator\MathExpressionEvaluator.csproj", "{98BEEFC9-E704-4792-A4CA-0BF8F9EBF9AF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MathExpressionEvaluator.UnitTests", "MathExpressionEvaluator.UnitTests\MathExpressionEvaluator.UnitTests.csproj", "{451DE3C9-F7EF-4268-A593-DFAE04BEAE9B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{98BEEFC9-E704-4792-A4CA-0BF8F9EBF9AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98BEEFC9-E704-4792-A4CA-0BF8F9EBF9AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98BEEFC9-E704-4792-A4CA-0BF8F9EBF9AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98BEEFC9-E704-4792-A4CA-0BF8F9EBF9AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{451DE3C9-F7EF-4268-A593-DFAE04BEAE9B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{451DE3C9-F7EF-4268-A593-DFAE04BEAE9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{451DE3C9-F7EF-4268-A593-DFAE04BEAE9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{451DE3C9-F7EF-4268-A593-DFAE04BEAE9B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
