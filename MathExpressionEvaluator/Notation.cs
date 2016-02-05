@@ -18,12 +18,12 @@ namespace MathExpressionEvaluator
 
         public string Expression { get; }
 
-        private static IReadOnlyList<string> ToPostfix(IEnumerable<string> expression)
+        private static IReadOnlyList<string> ToPostfix(IEnumerable<string> infix)
         {
             var stack = new Stack<string>();
             var postfix = new List<string>();
 
-            foreach (var item in expression)
+            foreach (var item in infix)
             {
                 if (IsOpenParentheses(item))
                 {
@@ -106,29 +106,29 @@ namespace MathExpressionEvaluator
             return default(bool);
         }
 
-        private static bool IsOpenParentheses(string expression)
+        private static bool IsOpenParentheses(string @operator)
         {
-            return expression == Symbol.OpenParentheses;
+            return @operator == Symbol.OpenParentheses;
         }
 
-        private static bool IsCloseParentheses(string expression)
+        private static bool IsCloseParentheses(string @operator)
         {
-            return expression == Symbol.CloseParentheses;
+            return @operator == Symbol.CloseParentheses;
         }
 
-        private static bool IsExponent(string expression)
+        private static bool IsExponent(string @operator)
         {
-            return expression == Symbol.Power || expression == Symbol.SquareRoot;
+            return @operator == Symbol.Power || @operator == Symbol.SquareRoot;
         }
 
-        public static bool IsMultiplication(string expression)
+        public static bool IsMultiplication(string @operator)
         {
-            return expression == Symbol.Multiplication || expression == Symbol.Division;
+            return @operator == Symbol.Multiplication || @operator == Symbol.Division;
         }
 
-        public static bool IsAddition(string expression)
+        public static bool IsAddition(string @operator)
         {
-            return expression == Symbol.Addition || expression == Symbol.Subtraction;
+            return @operator == Symbol.Addition || @operator == Symbol.Subtraction;
         }
     }
 }
