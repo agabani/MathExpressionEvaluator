@@ -40,11 +40,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Expression.cs" />
+    <Compile Include="Expressions\Binary\Concrete\AdditionBinaryExpression.cs" />
+    <Compile Include="Expressions\Binary\BinaryExpression.cs" />
+    <Compile Include="Expressions\Binary\Concrete\DivisionBinaryExpression.cs" />
+    <Compile Include="Expressions\Expression.cs" />
+    <Compile Include="Expressions\Binary\Concrete\MultiplicationBinaryExpression.cs" />
+    <Compile Include="Expressions\Binary\Concrete\PowerBinaryExpression.cs" />
+    <Compile Include="Expressions\Binary\Concrete\SubtractionBinaryExpression.cs" />
+    <Compile Include="Expressions\Factory\ExpressionFactory.cs" />
     <Compile Include="Notation.cs" />
     <Compile Include="Interpreter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
