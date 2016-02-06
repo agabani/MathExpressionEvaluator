@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Globalization;
 using MathExpressionEvaluator.Common;
 using MathExpressionEvaluator.Expressions.Binary.Concrete;
 using MathExpressionEvaluator.Expressions.Unary.Concrete;
@@ -38,6 +37,9 @@ namespace MathExpressionEvaluator.Expressions
                 case Symbol.Arcsin:
                 case Symbol.Arctan:
                 case Symbol.Cos:
+                case Symbol.Lg:
+                case Symbol.Ln:
+                case Symbol.Log:
                 case Symbol.Sin:
                 case Symbol.SquareRoot:
                 case Symbol.Tan:
@@ -87,6 +89,12 @@ namespace MathExpressionEvaluator.Expressions
                     return new ArctanUnaryExpression(operand);
                 case Symbol.Cos:
                     return new CosUnaryExpression(operand);
+                case Symbol.Lg:
+                    return new LgUnaryExpression(operand);
+                case Symbol.Ln:
+                    return new LnUnaryExpression(operand);
+                case Symbol.Log:
+                    return new LogUnaryExpression(operand);
                 case Symbol.Sin:
                     return new SinUnaryExpression(operand);
                 case Symbol.SquareRoot:

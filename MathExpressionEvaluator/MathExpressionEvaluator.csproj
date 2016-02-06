@@ -52,6 +52,9 @@
     <Compile Include="Expressions\Unary\Concrete\ArcsinUnaryExpression.cs" />
     <Compile Include="Expressions\Unary\Concrete\ArctanUnaryExpression.cs" />
     <Compile Include="Expressions\Unary\Concrete\CosUnaryExpression.cs" />
+    <Compile Include="Expressions\Unary\Concrete\LgUnaryExpression.cs" />
+    <Compile Include="Expressions\Unary\Concrete\LnUnaryExpression.cs" />
+    <Compile Include="Expressions\Unary\Concrete\LogUnaryExpression.cs" />
     <Compile Include="Expressions\Unary\Concrete\NotUnaryExpression.cs" />
     <Compile Include="Expressions\Unary\Concrete\SquareRootUnaryExpression.cs" />
     <Compile Include="Expressions\Unary\Concrete\SinUnaryExpression.cs" />

@@ -23,20 +23,31 @@ namespace MathExpressionEvaluator.UnitTests
         }
 
         [Test]
-        [TestCase("0", 0)]
-        [TestCase("1", 1)]
-        [TestCase("-1", -1)]
-        public void Should_be_able_to_evaluate_numbers(string question, decimal answer)
-        {
-            Assert.That(new MathExpression(question).Evaluate(), Is.EqualTo(answer));
-        }
-
-        [Test]
         [TestCase("$e", Math.E)]
         [TestCase("-$e", -Math.E)]
         [TestCase("pi", Math.PI)]
         [TestCase("-pi", -Math.PI)]
         public void Should_be_able_to_evaluate_constants(string question, decimal answer)
+        {
+            Assert.That(new MathExpression(question).Evaluate(), Is.EqualTo(answer));
+        }
+
+        [Test]
+        [TestCase("lg(16)", 4)]
+        [TestCase("ln(16)", 2.77258872224)]
+        [TestCase("log(16)", 1.20411998266)]
+        public void Should_be_able_to_evaluate_logarithm(string question, decimal answer)
+        {
+            Assert.That(new MathExpression(question).Evaluate(),
+                Is.LessThanOrEqualTo(answer + (decimal) 0.00000000001)
+                    .And.GreaterThanOrEqualTo(answer - (decimal) 0.00000000001));
+        }
+
+        [Test]
+        [TestCase("0", 0)]
+        [TestCase("1", 1)]
+        [TestCase("-1", -1)]
+        public void Should_be_able_to_evaluate_numbers(string question, decimal answer)
         {
             Assert.That(new MathExpression(question).Evaluate(), Is.EqualTo(answer));
         }
@@ -87,9 +98,7 @@ namespace MathExpressionEvaluator.UnitTests
         [TestCase("arctan(-1)", -Math.PI/4)]
         public void Should_be_able_to_evaluate_trigonometry(string question, decimal answer)
         {
-            var mathExpression = new MathExpression(question);
-            var actual = mathExpression.Evaluate();
-            Assert.That(actual,
+            Assert.That(new MathExpression(question).Evaluate(),
                 Is.LessThanOrEqualTo(answer + (decimal) 0.00000000000001)
                     .And.GreaterThanOrEqualTo(answer - (decimal) 0.00000000000001));
         }

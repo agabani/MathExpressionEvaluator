@@ -6,7 +6,7 @@ namespace MathExpressionEvaluator.Expressions.Value
     {
         internal override decimal Evaluate()
         {
-            return (decimal)Math.E;
+            return (decimal) Math.E;
         }
     }
 }

@@ -130,6 +130,9 @@ namespace MathExpressionEvaluator.Parser
                    || @operator == Symbol.Arcsin
                    || @operator == Symbol.Arctan
                    || @operator == Symbol.Cos
+                   || @operator == Symbol.Lg
+                   || @operator == Symbol.Ln
+                   || @operator == Symbol.Log
                    || @operator == Symbol.Power
                    || @operator == Symbol.Sin
                    || @operator == Symbol.SquareRoot
