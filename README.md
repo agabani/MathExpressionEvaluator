@@ -1,4 +1,5 @@
 # Math Expression Evalutor
+> Lightweight lazy infix math expression evaluator written using C#
 
 ## Examples
 
