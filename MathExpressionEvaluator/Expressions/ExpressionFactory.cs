@@ -21,9 +21,9 @@ namespace MathExpressionEvaluator.Expressions
 
         internal int RequiredOperands(string @operator, int availableOperands)
         {
-            decimal value;
+            double value;
 
-            if (decimal.TryParse(@operator, out value))
+            if (double.TryParse(@operator, out value))
             {
                 return 0;
             }
@@ -64,11 +64,11 @@ namespace MathExpressionEvaluator.Expressions
 
         internal Expression Create(string @operator)
         {
-            decimal value;
+            double value;
 
-            if (decimal.TryParse(@operator, out value))
+            if (double.TryParse(@operator, out value))
             {
-                return new ConstantExpression(decimal.Parse(@operator));
+                return new ConstantExpression(double.Parse(@operator));
             }
 
             switch (@operator)

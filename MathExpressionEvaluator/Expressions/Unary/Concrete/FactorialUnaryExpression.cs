@@ -22,9 +22,9 @@ namespace MathExpressionEvaluator.Expressions.Unary.Concrete
         {
         }
 
-        internal override decimal Evaluate()
+        internal override double Evaluate()
         {
-            return (decimal) Gamma((Complex) Expression.Evaluate() + 1).Real;
+            return Gamma((Complex) Expression.Evaluate() + 1).Real;
         }
 
         private static Complex Gamma(Complex z)

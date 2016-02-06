@@ -6,16 +6,16 @@ namespace MathExpressionEvaluator
     public class MathExpression
     {
         private readonly string _expression;
-        private decimal? _evaluation;
+        private double? _evaluation;
 
         public MathExpression(string expression)
         {
             _expression = expression;
         }
 
-        public decimal Evaluate()
+        public double Evaluate()
         {
-            return (decimal)
+            return (double)
                 (_evaluation ??
                  (_evaluation = PostfixInterpreter.Accessor().Interpret(new Notation(_expression)).Evaluate()));
         }

@@ -2,6 +2,6 @@
 {
     internal abstract class Expression
     {
-        internal abstract decimal Evaluate();
+        internal abstract double Evaluate();
     }
 }

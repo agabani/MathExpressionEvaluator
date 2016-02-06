@@ -9,9 +9,9 @@ namespace MathExpressionEvaluator.Expressions.Unary.Concrete
         {
         }
 
-        internal override decimal Evaluate()
+        internal override double Evaluate()
         {
-            return (decimal) Math.Log((double) Expression.Evaluate(), 2);
+            return Math.Log(Expression.Evaluate(), 2);
         }
     }
 }

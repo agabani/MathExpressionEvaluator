@@ -4,9 +4,9 @@ namespace MathExpressionEvaluator.Expressions.Value
 {
     internal sealed class PiExpression : Expression
     {
-        internal override decimal Evaluate()
+        internal override double Evaluate()
         {
-            return (decimal) Math.PI;
+            return Math.PI;
         }
     }
 }

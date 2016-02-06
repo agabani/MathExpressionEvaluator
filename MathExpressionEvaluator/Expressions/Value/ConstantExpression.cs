@@ -2,14 +2,14 @@
 {
     internal sealed class ConstantExpression : Expression
     {
-        private readonly decimal _value;
+        private readonly double _value;
 
-        internal ConstantExpression(decimal value)
+        internal ConstantExpression(double value)
         {
             _value = value;
         }
 
-        internal override decimal Evaluate()
+        internal override double Evaluate()
         {
             return _value;
         }

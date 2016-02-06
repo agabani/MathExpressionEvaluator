@@ -7,7 +7,7 @@
         {
         }
 
-        internal override decimal Evaluate()
+        internal override double Evaluate()
         {
             return -Expression.Evaluate();
         }

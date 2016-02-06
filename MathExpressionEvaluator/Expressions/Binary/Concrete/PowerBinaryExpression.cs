@@ -9,9 +9,9 @@ namespace MathExpressionEvaluator.Expressions.Binary.Concrete
         {
         }
 
-        internal override decimal Evaluate()
+        internal override double Evaluate()
         {
-            return (decimal) Math.Pow((double) Expression1.Evaluate(), (double) Expression2.Evaluate());
+            return Math.Pow(Expression1.Evaluate(), Expression2.Evaluate());
         }
     }
 }
