@@ -18,24 +18,24 @@ namespace MathExpressionEvaluator.Interpreter
             return _postfixInterpreter ?? (_postfixInterpreter = new PostfixInterpreter());
         }
 
-        internal Expression Interpret(NotationParser notation)
+        internal Expression Interpret(Notation notation)
         {
             var expressionFactory = ExpressionFactory.Accessor();
 
             var expressions = new Stack<Expression>();
 
-            foreach (var expression in notation.Postfix)
+            foreach (var @operator in notation.Postfix)
             {
-                switch (expressionFactory.RequiredOperands(expression, expressions.Count))
+                switch (expressionFactory.RequiredOperands(@operator, expressions.Count))
                 {
                     case 0:
-                        expressions.Push(expressionFactory.Create(expression));
+                        expressions.Push(expressionFactory.Create(@operator));
                         break;
                     case 1:
-                        expressions.Push(expressionFactory.Create(expression, expressions.Pop()));
+                        expressions.Push(expressionFactory.Create(@operator, expressions.Pop()));
                         break;
                     case 2:
-                        expressions.Push(expressionFactory.Create(expression, expressions.Pop(), expressions.Pop()));
+                        expressions.Push(expressionFactory.Create(@operator, expressions.Pop(), expressions.Pop()));
                         break;
                     default:
                         throw new NotSupportedException();

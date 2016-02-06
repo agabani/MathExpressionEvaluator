@@ -4,12 +4,12 @@ using MathExpressionEvaluator.Common;
 
 namespace MathExpressionEvaluator.Parser
 {
-    internal class NotationParser
+    internal class Notation
     {
         private IReadOnlyList<string> _infix;
         private IReadOnlyList<string> _postfix;
 
-        internal NotationParser(string expression)
+        internal Notation(string expression)
         {
             Expression = expression;
         }
@@ -27,15 +27,15 @@ namespace MathExpressionEvaluator.Parser
             {
                 if (IsOpenParentheses(item))
                 {
-                    AddToStack(stack, item);
+                    AddToStack(item, stack);
                 }
                 else if (IsCloseParentheses(item))
                 {
                     DumpUntilOpenParentheses(stack, postfix);
                 }
-                else if (IsExponent(item) || IsMultiplication(item) || IsAddition(item))
+                else if (IsExponent(item) || IsMultiplicationOrDivision(item) || IsAdditionOrSubtraction(item))
                 {
-                    ProcessItem(stack, item, postfix);
+                    ProcessItem(item, stack, postfix);
                 }
                 else
                 {
@@ -48,7 +48,7 @@ namespace MathExpressionEvaluator.Parser
             return postfix;
         }
 
-        private static void AddToStack(Stack<string> stack, string item)
+        private static void AddToStack(string item, Stack<string> stack)
         {
             stack.Push(item);
         }
@@ -63,14 +63,14 @@ namespace MathExpressionEvaluator.Parser
             stack.Pop();
         }
 
-        private static void ProcessItem(Stack<string> stack, string item, ICollection<string> postfix)
+        private static void ProcessItem(string item, Stack<string> stack, ICollection<string> postfix)
         {
             if (stack.Any() && !IsHigherPrecedence(item, stack.Peek()))
             {
                 DumpFullStack(stack, postfix);
             }
 
-            AddToStack(stack, item);
+            AddToStack(item, stack);
         }
 
         private static void DumpFullStack(Stack<string> stack, ICollection<string> postfix)
@@ -93,14 +93,14 @@ namespace MathExpressionEvaluator.Parser
                 return true;
             }
 
-            if (IsMultiplication(@this))
+            if (IsMultiplicationOrDivision(@this))
             {
                 return IsExponent(other) || IsOpenParentheses(other);
             }
 
-            if (IsAddition(@this))
+            if (IsAdditionOrSubtraction(@this))
             {
-                return IsMultiplication(other) || IsExponent(other) || IsOpenParentheses(other);
+                return IsMultiplicationOrDivision(other) || IsExponent(other) || IsOpenParentheses(other);
             }
 
             return default(bool);
@@ -121,12 +121,12 @@ namespace MathExpressionEvaluator.Parser
             return @operator == Symbol.Power || @operator == Symbol.SquareRoot;
         }
 
-        private static bool IsMultiplication(string @operator)
+        private static bool IsMultiplicationOrDivision(string @operator)
         {
             return @operator == Symbol.Multiplication || @operator == Symbol.Division;
         }
 
-        private static bool IsAddition(string @operator)
+        private static bool IsAdditionOrSubtraction(string @operator)
         {
             return @operator == Symbol.Addition || @operator == Symbol.Subtraction;
         }
