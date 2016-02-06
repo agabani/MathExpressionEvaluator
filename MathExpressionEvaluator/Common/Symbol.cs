@@ -10,9 +10,11 @@
         internal const string Cos = "cos";
         internal const string Division = "/";
         internal const string E = "$e";
+        internal const string Factorial = "!";
         internal const string Lg = "lg";
         internal const string Ln = "ln";
         internal const string Log = "log";
+        internal const string Modulo = "%";
         internal const string Multiplication = "*";
         internal const string OpenParentheses = "(";
         internal const string Pi = "pi";

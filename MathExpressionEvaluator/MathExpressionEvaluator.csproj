@@ -32,6 +32,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Numerics" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -43,11 +44,13 @@
     <Compile Include="Expressions\Binary\Concrete\AdditionBinaryExpression.cs" />
     <Compile Include="Expressions\Binary\BinaryExpression.cs" />
     <Compile Include="Expressions\Binary\Concrete\DivisionBinaryExpression.cs" />
+    <Compile Include="Expressions\Binary\Concrete\ModuloBinaryExpression.cs" />
     <Compile Include="Expressions\Expression.cs" />
     <Compile Include="Expressions\Binary\Concrete\MultiplicationBinaryExpression.cs" />
     <Compile Include="Expressions\Binary\Concrete\PowerBinaryExpression.cs" />
     <Compile Include="Expressions\Binary\Concrete\SubtractionBinaryExpression.cs" />
     <Compile Include="Expressions\ExpressionFactory.cs" />
+    <Compile Include="Expressions\Unary\Concrete\FactorialUnaryExpression.cs" />
     <Compile Include="Expressions\Unary\Concrete\InverseCosineUnaryExpression.cs" />
     <Compile Include="Expressions\Unary\Concrete\InverseSineUnaryExpression.cs" />
     <Compile Include="Expressions\Unary\Concrete\InverseTangentUnaryExpression.cs" />

@@ -8,7 +8,7 @@ namespace MathExpressionEvaluator.Parser
     {
         private const string Numeric = "-?\\d+(\\.\\d+)?";
         private const string Variable = "\\$[a-zA-Z][a-zA-Z0-9]*";
-        private const string Operation = "[a-zA-Z][a-zA-Z0-9]+|[-*/+|?:@&^<>'`=%#]";
+        private const string Operation = "[a-zA-Z][a-zA-Z0-9]+|[-*/+|?:@&^<>'`=%#!]";
         private const string Parenthesis = "[()]";
 
         private static RegexExpressionParser _regexExpressionParser;

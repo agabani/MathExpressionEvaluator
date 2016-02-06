@@ -1,5 +1,5 @@
 # Math Expression Evalutor
-> Lightweight lazy infix math expression evaluator written using C#
+>  A lightweight C# math expression evaluator with lazy parsing and solving, support for standard order of operations and commonly used functions.
 
 ## Examples
 
@@ -53,6 +53,7 @@ var evaluation = expression.Evaluate();
 | Natural Log     | ln     |
 | Log2            | lg     |
 | Log10           | log    |
+| Factorial       | !      |
 
 ### Binary functions
 | Name           | Symbol |
@@ -62,8 +63,9 @@ var evaluation = expression.Evaluate();
 | Multiplication | *      |
 | Division       | /      |
 | Exponentiation | ^      |
+| Modulo         | %      |
 
-## Supported order of operations
+## Supported Order of Operations
 | Name              | Symbol |
 |-------------------|--------|
 | Open Parentheses  | (      |

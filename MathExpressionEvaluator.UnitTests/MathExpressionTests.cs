@@ -33,6 +33,19 @@ namespace MathExpressionEvaluator.UnitTests
         }
 
         [Test]
+        [TestCase("0!", 1)]
+        [TestCase("0.5!", 0.88622692545)]
+        [TestCase("1!", 1)]
+        [TestCase("4!", 24)]
+        [TestCase("6!", 720)]
+        public void Should_be_able_to_evaluate_factorial(string question, decimal answer)
+        {
+            Assert.That(new MathExpression(question).Evaluate(),
+                Is.LessThanOrEqualTo(answer + (decimal) 0.00000000001)
+                    .And.GreaterThanOrEqualTo(answer - (decimal) 0.00000000001));
+        }
+
+        [Test]
         [TestCase("lg(16)", 4)]
         [TestCase("ln(16)", 2.77258872224)]
         [TestCase("log(16)", 1.20411998266)]
@@ -41,6 +54,17 @@ namespace MathExpressionEvaluator.UnitTests
             Assert.That(new MathExpression(question).Evaluate(),
                 Is.LessThanOrEqualTo(answer + (decimal) 0.00000000001)
                     .And.GreaterThanOrEqualTo(answer - (decimal) 0.00000000001));
+        }
+
+        [Test]
+        [TestCase("5 % 2", 1)]
+        [TestCase("5 % 2 * 3", 3)]
+        [TestCase("5 % 2 ^ 3", 5)]
+        [TestCase("3 * 5 % 2", 1)]
+        [TestCase("3 ^ 5 % 2", 1)]
+        public void Should_be_able_to_evaluate_modulation(string question, decimal answer)
+        {
+            Assert.That(new MathExpression(question).Evaluate(), Is.EqualTo(answer));
         }
 
         [Test]

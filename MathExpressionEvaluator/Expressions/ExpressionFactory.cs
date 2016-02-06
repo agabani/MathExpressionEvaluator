@@ -33,10 +33,12 @@ namespace MathExpressionEvaluator.Expressions
                 case Symbol.E:
                 case Symbol.Pi:
                     return 0;
+
                 case Symbol.Arccos:
                 case Symbol.Arcsin:
                 case Symbol.Arctan:
                 case Symbol.Cos:
+                case Symbol.Factorial:
                 case Symbol.Lg:
                 case Symbol.Ln:
                 case Symbol.Log:
@@ -44,10 +46,13 @@ namespace MathExpressionEvaluator.Expressions
                 case Symbol.SquareRoot:
                 case Symbol.Tan:
                     return 1;
+
                 case Symbol.Subtraction:
                     return availableOperands == 1 ? 1 : 2;
+
                 case Symbol.Addition:
                 case Symbol.Division:
+                case Symbol.Modulo:
                 case Symbol.Multiplication:
                 case Symbol.Power:
                     return 2;
@@ -89,6 +94,8 @@ namespace MathExpressionEvaluator.Expressions
                     return new InverseTangentUnaryExpression(operand);
                 case Symbol.Cos:
                     return new CosineUnaryExpression(operand);
+                case Symbol.Factorial:
+                    return new FactorialUnaryExpression(operand);
                 case Symbol.Lg:
                     return new Log2UnaryExpression(operand);
                 case Symbol.Ln:
@@ -116,6 +123,8 @@ namespace MathExpressionEvaluator.Expressions
                     return new AdditionBinaryExpression(operand1, operand2);
                 case Symbol.Division:
                     return new DivisionBinaryExpression(operand1, operand2);
+                case Symbol.Modulo:
+                    return new ModuloBinaryExpression(operand1, operand2);
                 case Symbol.Multiplication:
                     return new MultiplicationBinaryExpression(operand1, operand2);
                 case Symbol.Power:

@@ -34,7 +34,8 @@ namespace MathExpressionEvaluator.Parser
                 {
                     DumpUntilThenDiscardOpenParentheses(stack, postfix);
                 }
-                else if (IsExponent(item) || IsMultiplicationOrDivision(item) || IsAdditionOrSubtraction(item))
+                else if (IsExponent(item) || IsModulo(item) || IsMultiplicationOrDivision(item) ||
+                         IsAdditionOrSubtraction(item))
                 {
                     ProcessItem(item, stack, postfix);
                 }
@@ -90,29 +91,34 @@ namespace MathExpressionEvaluator.Parser
             }
         }
 
-        private static bool IsLowerPrecedence(string @this, string other)
+        private static bool IsLowerPrecedence(string item, string stack)
         {
-            if (IsOpenParentheses(other))
+            if (IsOpenParentheses(stack))
             {
                 return true;
             }
 
-            if (IsExponent(@this))
+            if (IsExponent(item))
             {
                 return false;
             }
 
-            if (IsMultiplicationOrDivision(@this))
+            if (IsModulo(item))
             {
-                return IsExponent(other);
+                return IsExponent(stack) || IsModulo(stack) || IsMultiplicationOrDivision(stack);
             }
 
-            if (IsAdditionOrSubtraction(@this))
+            if (IsMultiplicationOrDivision(item))
             {
-                return IsAdditionOrSubtraction(@other) || IsMultiplicationOrDivision(other) || IsExponent(other);
+                return IsExponent(stack) || IsModulo(stack);
             }
 
-            throw new NotSupportedException(@this);
+            if (IsAdditionOrSubtraction(item))
+            {
+                return IsAdditionOrSubtraction(stack) || IsMultiplicationOrDivision(stack) || IsExponent(stack);
+            }
+
+            throw new NotSupportedException(item);
         }
 
         private static bool IsOpenParentheses(string @operator)
@@ -131,6 +137,7 @@ namespace MathExpressionEvaluator.Parser
                    || @operator == Symbol.Arcsin
                    || @operator == Symbol.Arctan
                    || @operator == Symbol.Cos
+                   || @operator == Symbol.Factorial
                    || @operator == Symbol.Lg
                    || @operator == Symbol.Ln
                    || @operator == Symbol.Log
@@ -138,6 +145,11 @@ namespace MathExpressionEvaluator.Parser
                    || @operator == Symbol.Sin
                    || @operator == Symbol.SquareRoot
                    || @operator == Symbol.Tan;
+        }
+
+        private static bool IsModulo(string @operator)
+        {
+            return @operator == Symbol.Modulo;
         }
 
         private static bool IsMultiplicationOrDivision(string @operator)
