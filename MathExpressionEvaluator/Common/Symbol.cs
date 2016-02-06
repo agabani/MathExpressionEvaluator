@@ -5,6 +5,7 @@
         internal const string Addition = "+";
         internal const string Arccos = "arccos";
         internal const string Arcsin = "arcsin";
+        internal const string Arctan = "arctan";
         internal const string CloseParentheses = ")";
         internal const string Cos = "cos";
         internal const string Division = "/";

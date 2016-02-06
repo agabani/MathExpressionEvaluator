@@ -34,6 +34,7 @@ namespace MathExpressionEvaluator.Expressions
                     return 0;
                 case Symbol.Arccos:
                 case Symbol.Arcsin:
+                case Symbol.Arctan:
                 case Symbol.Cos:
                 case Symbol.Sin:
                 case Symbol.SquareRoot:
@@ -78,6 +79,8 @@ namespace MathExpressionEvaluator.Expressions
                     return new ArccosUnaryExpression(operand);
                 case Symbol.Arcsin:
                     return new ArcsinUnaryExpression(operand);
+                case Symbol.Arctan:
+                    return new ArctanUnaryExpression(operand);
                 case Symbol.Cos:
                     return new CosUnaryExpression(operand);
                 case Symbol.Sin:

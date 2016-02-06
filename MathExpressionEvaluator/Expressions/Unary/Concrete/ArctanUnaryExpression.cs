@@ -2,16 +2,16 @@
 
 namespace MathExpressionEvaluator.Expressions.Unary.Concrete
 {
-    internal class TanUnaryExpression : UnaryExpression
+    internal class ArctanUnaryExpression : UnaryExpression
     {
-        internal TanUnaryExpression(Expression expression)
+        internal ArctanUnaryExpression(Expression expression)
             : base(expression)
         {
         }
 
         internal override decimal Evaluate()
         {
-            return (decimal) Math.Tan((double) Expression.Evaluate());
+            return (decimal) Math.Atan((double) Expression.Evaluate());
         }
     }
 }

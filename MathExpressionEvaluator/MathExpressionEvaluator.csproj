@@ -50,6 +50,7 @@
     <Compile Include="Expressions\ExpressionFactory.cs" />
     <Compile Include="Expressions\Unary\Concrete\ArccosUnaryExpression.cs" />
     <Compile Include="Expressions\Unary\Concrete\ArcsinUnaryExpression.cs" />
+    <Compile Include="Expressions\Unary\Concrete\ArctanUnaryExpression.cs" />
     <Compile Include="Expressions\Unary\Concrete\CosUnaryExpression.cs" />
     <Compile Include="Expressions\Unary\Concrete\NotUnaryExpression.cs" />
     <Compile Include="Expressions\Unary\Concrete\SquareRootUnaryExpression.cs" />

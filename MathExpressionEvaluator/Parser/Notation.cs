@@ -128,6 +128,7 @@ namespace MathExpressionEvaluator.Parser
         {
             return @operator == Symbol.Arccos
                    || @operator == Symbol.Arcsin
+                   || @operator == Symbol.Arctan
                    || @operator == Symbol.Cos
                    || @operator == Symbol.Power
                    || @operator == Symbol.Sin

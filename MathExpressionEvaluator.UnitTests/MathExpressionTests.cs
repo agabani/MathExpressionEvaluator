@@ -80,6 +80,9 @@ namespace MathExpressionEvaluator.UnitTests
         [TestCase("arcsin(1)", Math.PI/2)]
         [TestCase("arcsin(0)", 0)]
         [TestCase("arcsin(-1)", -Math.PI/2)]
+        [TestCase("arctan(1)", Math.PI/4)]
+        [TestCase("arctan(0)", 0)]
+        [TestCase("arctan(-1)", -Math.PI/4)]
         public void Should_be_able_to_evaluate_trigonometry(string question, decimal answer)
         {
             var mathExpression = new MathExpression(question);
