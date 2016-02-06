@@ -1,10 +1,10 @@
 ﻿namespace MathExpressionEvaluator.Expressions.Value
 {
-    internal sealed class ValueExpression : Expression
+    internal sealed class ConstantExpression : Expression
     {
         private readonly decimal _value;
 
-        internal ValueExpression(decimal value)
+        internal ConstantExpression(decimal value)
         {
             _value = value;
         }

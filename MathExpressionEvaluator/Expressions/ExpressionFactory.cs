@@ -63,7 +63,7 @@ namespace MathExpressionEvaluator.Expressions
 
             if (decimal.TryParse(@operator, out value))
             {
-                return new ValueExpression(decimal.Parse(@operator));
+                return new ConstantExpression(decimal.Parse(@operator));
             }
 
             switch (@operator)

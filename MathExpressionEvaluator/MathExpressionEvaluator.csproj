@@ -62,7 +62,7 @@
     <Compile Include="Expressions\Unary\UnaryExpression.cs" />
     <Compile Include="Expressions\Value\EExpression.cs" />
     <Compile Include="Expressions\Value\PiExpression.cs" />
-    <Compile Include="Expressions\Value\ValueExpression.cs" />
+    <Compile Include="Expressions\Value\ConstantExpression.cs" />
     <Compile Include="MathExpression.cs" />
     <Compile Include="Parser\Notation.cs" />
     <Compile Include="Interpreter\PostfixInterpreter.cs" />
