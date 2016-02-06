@@ -6,6 +6,8 @@ namespace MathExpressionEvaluator.UnitTests
     [TestFixture]
     public class MathExpressionTests
     {
+        private const double Epsilon = 0.0000000001;
+
         [Test]
         [TestCase("1 + 2", 3d)]
         [TestCase("2 + 4 + 6", 12d)]
@@ -41,8 +43,8 @@ namespace MathExpressionEvaluator.UnitTests
         public void Should_be_able_to_evaluate_factorial(string question, double answer)
         {
             Assert.That(new MathExpression(question).Evaluate(),
-                Is.LessThanOrEqualTo(answer + 0.00000000001)
-                    .And.GreaterThanOrEqualTo(answer - 0.00000000001));
+                Is.LessThanOrEqualTo(answer + Epsilon)
+                    .And.GreaterThanOrEqualTo(answer - Epsilon));
         }
 
         [Test]
@@ -52,8 +54,8 @@ namespace MathExpressionEvaluator.UnitTests
         public void Should_be_able_to_evaluate_logarithm(string question, double answer)
         {
             Assert.That(new MathExpression(question).Evaluate(),
-                Is.LessThanOrEqualTo(answer + 0.00000000001)
-                    .And.GreaterThanOrEqualTo(answer - 0.00000000001));
+                Is.LessThanOrEqualTo(answer + Epsilon)
+                    .And.GreaterThanOrEqualTo(answer - Epsilon));
         }
 
         [Test]
@@ -121,11 +123,20 @@ namespace MathExpressionEvaluator.UnitTests
         [TestCase("arctan(1)", Math.PI/4)]
         [TestCase("arctan(0)", 0d)]
         [TestCase("arctan(-1)", -Math.PI/4)]
+        [TestCase("cosh(0)", 1d)]
+        [TestCase("cosh(pi)", 11.5919532755d)]
+        [TestCase("cosh(-3*pi/4)", 5.32275214952d)]
+        [TestCase("sinh(0)", 0d)]
+        [TestCase("sinh(pi)", 11.5487393573d)]
+        [TestCase("sinh(-3*pi/4)", -5.22797192468d)]
+        [TestCase("tanh(0)", 0d)]
+        [TestCase("tanh(pi/4)", 0.65579420263d)]
+        [TestCase("tanh(-pi/4)", -0.65579420263d)]
         public void Should_be_able_to_evaluate_trigonometry(string question, double answer)
         {
             Assert.That(new MathExpression(question).Evaluate(),
-                Is.LessThanOrEqualTo(answer + 0.00000000000001)
-                    .And.GreaterThanOrEqualTo(answer - 0.00000000000001));
+                Is.LessThanOrEqualTo(answer + Epsilon)
+                    .And.GreaterThanOrEqualTo(answer - Epsilon));
         }
 
         [Test]

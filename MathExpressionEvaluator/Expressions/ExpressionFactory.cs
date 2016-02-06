@@ -38,13 +38,16 @@ namespace MathExpressionEvaluator.Expressions
                 case Symbol.Arcsin:
                 case Symbol.Arctan:
                 case Symbol.Cos:
+                case Symbol.Cosh:
                 case Symbol.Factorial:
                 case Symbol.Lg:
                 case Symbol.Ln:
                 case Symbol.Log:
                 case Symbol.Sin:
+                case Symbol.Sinh:
                 case Symbol.SquareRoot:
                 case Symbol.Tan:
+                case Symbol.Tanh:
                     return 1;
 
                 case Symbol.Subtraction:
@@ -94,6 +97,8 @@ namespace MathExpressionEvaluator.Expressions
                     return new InverseTangentUnaryExpression(operand);
                 case Symbol.Cos:
                     return new CosineUnaryExpression(operand);
+                case Symbol.Cosh:
+                    return new HyperbolicCosineUnaryExpression(operand);
                 case Symbol.Factorial:
                     return new FactorialUnaryExpression(operand);
                 case Symbol.Lg:
@@ -104,12 +109,16 @@ namespace MathExpressionEvaluator.Expressions
                     return new Log10UnaryExpression(operand);
                 case Symbol.Sin:
                     return new SineUnaryExpression(operand);
+                case Symbol.Sinh:
+                    return new HyperbolicSineUnaryExpression(operand);
                 case Symbol.SquareRoot:
                     return new SquareRootUnaryExpression(operand);
                 case Symbol.Subtraction:
                     return new NotUnaryExpression(operand);
                 case Symbol.Tan:
                     return new TangentUnaryExpression(operand);
+                case Symbol.Tanh:
+                    return new HyperbolicTangentUnaryExpression(operand);
                 default:
                     throw new NotSupportedException(@operator);
             }

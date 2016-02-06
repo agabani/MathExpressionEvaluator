@@ -51,6 +51,9 @@
     <Compile Include="Expressions\Binary\Concrete\SubtractionBinaryExpression.cs" />
     <Compile Include="Expressions\ExpressionFactory.cs" />
     <Compile Include="Expressions\Unary\Concrete\FactorialUnaryExpression.cs" />
+    <Compile Include="Expressions\Unary\Concrete\HyperbolicCosineUnaryExpression.cs" />
+    <Compile Include="Expressions\Unary\Concrete\HyperbolicSineUnaryExpression.cs" />
+    <Compile Include="Expressions\Unary\Concrete\HyperbolicTangentUnaryExpression.cs" />
     <Compile Include="Expressions\Unary\Concrete\InverseCosineUnaryExpression.cs" />
     <Compile Include="Expressions\Unary\Concrete\InverseSineUnaryExpression.cs" />
     <Compile Include="Expressions\Unary\Concrete\InverseTangentUnaryExpression.cs" />

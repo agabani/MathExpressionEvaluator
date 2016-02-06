@@ -137,14 +137,17 @@ namespace MathExpressionEvaluator.Parser
                    || @operator == Symbol.Arcsin
                    || @operator == Symbol.Arctan
                    || @operator == Symbol.Cos
+                   || @operator == Symbol.Cosh
                    || @operator == Symbol.Factorial
                    || @operator == Symbol.Lg
                    || @operator == Symbol.Ln
                    || @operator == Symbol.Log
                    || @operator == Symbol.Power
                    || @operator == Symbol.Sin
+                   || @operator == Symbol.Sinh
                    || @operator == Symbol.SquareRoot
-                   || @operator == Symbol.Tan;
+                   || @operator == Symbol.Tan
+                   || @operator == Symbol.Tanh;
         }
 
         private static bool IsModulo(string @operator)

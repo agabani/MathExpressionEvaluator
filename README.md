@@ -41,19 +41,22 @@ var evaluation = expression.Evaluate();
 
 ## Supported Functions
 ### Unary Functions
-| Name            | Symbol |
-|-----------------|--------|
-| Square Root     | sqrt   |
-| Sine            | sin    |
-| Cosine          | cos    |
-| Tangent         | tan    |
-| Inverse Sine    | arcsin |
-| Inverse Cosine  | arccos |
-| Inverse Tangent | arctan |
-| Natural Log     | ln     |
-| Log2            | lg     |
-| Log10           | log    |
-| Factorial       | !      |
+| Name               | Symbol |
+|--------------------|--------|
+| Log2               | lg     |
+| Log10              | log    |
+| Natural Log        | ln     |
+| Factorial          | !      |
+| Sine               | sin    |
+| Cosine             | cos    |
+| Tangent            | tan    |
+| Inverse Sine       | arcsin |
+| Inverse Cosine     | arccos |
+| Inverse Tangent    | arctan |
+| Hyperbolic Sine    | sinh   |
+| Hyperbolic Cosine  | cosh   |
+| Hyperbolic Tangent | tanh   |
+| Square Root        | sqrt   |
 
 ### Binary functions
 | Name           | Symbol |
