@@ -2,16 +2,16 @@
 
 namespace MathExpressionEvaluator.Expressions.Unary.Concrete
 {
-    internal class CosUnaryExpression : UnaryExpression
+    internal class TanUnaryExpression : UnaryExpression
     {
-        internal CosUnaryExpression(Expression expression)
+        internal TanUnaryExpression(Expression expression)
             : base(expression)
         {
         }
 
         internal override decimal Evaluate()
         {
-            return (decimal) Math.Cos((double) Expression.Evaluate());
+            return (decimal)Math.Tan((double)Expression.Evaluate());
         }
     }
 }

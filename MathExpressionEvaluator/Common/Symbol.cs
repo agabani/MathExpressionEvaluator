@@ -13,5 +13,6 @@
         internal const string Sin = "sin";
         internal const string SquareRoot = "sqrt";
         internal const string Subtraction = "-";
+        internal const string Tan = "tan";
     }
 }

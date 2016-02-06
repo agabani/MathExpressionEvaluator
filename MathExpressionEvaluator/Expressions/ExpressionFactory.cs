@@ -35,6 +35,7 @@ namespace MathExpressionEvaluator.Expressions
                 case Symbol.Cos:
                 case Symbol.Sin:
                 case Symbol.SquareRoot:
+                case Symbol.Tan:
                     return 1;
                 case Symbol.Subtraction:
                     return availableOperands == 1 ? 1 : 2;
@@ -79,6 +80,8 @@ namespace MathExpressionEvaluator.Expressions
                     return new SquareRootUnaryExpression(operand);
                 case Symbol.Subtraction:
                     return new NotUnaryExpression(operand);
+                case Symbol.Tan:
+                    return new TanUnaryExpression(operand);
                 default:
                     throw new NotSupportedException(@operator);
             }

@@ -52,6 +52,7 @@
     <Compile Include="Expressions\Unary\Concrete\NotUnaryExpression.cs" />
     <Compile Include="Expressions\Unary\Concrete\SquareRootUnaryExpression.cs" />
     <Compile Include="Expressions\Unary\Concrete\SinUnaryExpression.cs" />
+    <Compile Include="Expressions\Unary\Concrete\TanUnaryExpression.cs" />
     <Compile Include="Expressions\Unary\UnaryExpression.cs" />
     <Compile Include="Expressions\Value\PiExpression.cs" />
     <Compile Include="Expressions\Value\ValueExpression.cs" />

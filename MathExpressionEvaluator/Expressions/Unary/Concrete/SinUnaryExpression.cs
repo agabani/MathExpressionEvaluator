@@ -4,7 +4,8 @@ namespace MathExpressionEvaluator.Expressions.Unary.Concrete
 {
     internal class SinUnaryExpression : UnaryExpression
     {
-        internal SinUnaryExpression(Expression expression) : base(expression)
+        internal SinUnaryExpression(Expression expression)
+            : base(expression)
         {
         }
 
