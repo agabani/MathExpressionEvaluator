@@ -69,6 +69,7 @@ namespace MathExpressionEvaluator.UnitTests
 
         [Test]
         [TestCase("-1 - 2", -3)]
+        [TestCase("3 - -2", 5)]
         public void Should_be_able_to_evaluate_subtraction(string question, decimal answer)
         {
             Assert.That(new MathExpression(question).Evaluate(), Is.EqualTo(answer));

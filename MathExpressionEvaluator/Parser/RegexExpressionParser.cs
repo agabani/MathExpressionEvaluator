@@ -13,7 +13,7 @@ namespace MathExpressionEvaluator.Parser
 
         private static RegexExpressionParser _regexExpressionParser;
 
-        private static readonly Regex Regex = new Regex(Operation + "|" + Numeric + "|" + Variable + "|" + Parenthesis);
+        private static readonly Regex Regex = new Regex(Numeric + "|" + Operation + "|" + Variable + "|" + Parenthesis);
 
         private RegexExpressionParser()
         {
