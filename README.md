@@ -57,8 +57,14 @@ var evaluation = expression.Evaluate();
 ### Binary functions
 | Name           | Symbol |
 |----------------|--------|
-| Addition       |    +   |
-| Subtraction    |    -   |
-| Multiplication |    *   |
-| Division       |    /   |
-| Exponentiation |    ^   |
+| Addition       | +      |
+| Subtraction    | -      |
+| Multiplication | *      |
+| Division       | /      |
+| Exponentiation | ^      |
+
+## Supported order of operations
+| Name              | Symbol |
+|-------------------|--------|
+| Open Parentheses  | (      |
+| Close Parentheses | )      |
