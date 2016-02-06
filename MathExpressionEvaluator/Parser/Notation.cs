@@ -104,7 +104,7 @@ namespace MathExpressionEvaluator.Parser
 
             if (IsMultiplicationOrDivision(@this))
             {
-                return IsMultiplicationOrDivision(other) || IsExponent(other);
+                return IsExponent(other);
             }
 
             if (IsAdditionOrSubtraction(@this))

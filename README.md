@@ -4,14 +4,14 @@
 ## Examples
 
 ``` c#
-// Order of Operations - BODMAS
-var expression = new MathExpression("(5 + 3 ^ 2) * 12 / 3");
+// Area of a circle
+var expression = new MathExpression("pi * 2^2");
 var evaluation = expression.Evaluate();
 ```
 
 ``` c#
-// Area of a circle
-var expression = new MathExpression("pi * 2^2");
+// Quadratic Formula
+var expression = new MathExpression("(-5 + sqrt(5^2 - 4*1*6)) / (2*1)");
 var evaluation = expression.Evaluate();
 ```
 
