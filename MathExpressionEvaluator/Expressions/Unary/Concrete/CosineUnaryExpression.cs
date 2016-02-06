@@ -2,7 +2,7 @@
 
 namespace MathExpressionEvaluator.Expressions.Unary.Concrete
 {
-    internal class CosineUnaryExpression : UnaryExpression
+    internal sealed class CosineUnaryExpression : UnaryExpression
     {
         internal CosineUnaryExpression(Expression expression)
             : base(expression)

@@ -1,6 +1,6 @@
 ﻿namespace MathExpressionEvaluator.Expressions.Unary.Concrete
 {
-    internal class NotUnaryExpression : UnaryExpression
+    internal sealed class NotUnaryExpression : UnaryExpression
     {
         internal NotUnaryExpression(Expression expression)
             : base(expression)

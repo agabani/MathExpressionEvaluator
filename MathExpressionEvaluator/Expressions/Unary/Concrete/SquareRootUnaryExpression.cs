@@ -2,7 +2,7 @@
 
 namespace MathExpressionEvaluator.Expressions.Unary.Concrete
 {
-    internal class SquareRootUnaryExpression : UnaryExpression
+    internal sealed class SquareRootUnaryExpression : UnaryExpression
     {
         internal SquareRootUnaryExpression(Expression expression)
             : base(expression)
