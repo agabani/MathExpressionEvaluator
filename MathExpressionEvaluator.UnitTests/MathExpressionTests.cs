@@ -32,7 +32,7 @@ namespace MathExpressionEvaluator.UnitTests
         }
 
         [Test]
-        [TestCase("PI", Math.PI)]
+        [TestCase("pi", Math.PI)]
         public void Should_be_able_to_evaluate_Pi(string question, decimal answer)
         {
             Assert.That(new MathExpression(question).Evaluate(), Is.EqualTo(answer));
@@ -44,6 +44,20 @@ namespace MathExpressionEvaluator.UnitTests
         public void Should_be_able_to_evaluate_power(string question, decimal answer)
         {
             Assert.That(new MathExpression(question).Evaluate(), Is.EqualTo(answer));
+        }
+
+        [Test]
+        [TestCase("sin(0)", 0)]
+        [TestCase("sin(pi/2)", 1)]
+        [TestCase("sin(pi)", 0)]
+        [TestCase("sin(3*pi/2)", -1)]
+        public void Should_be_able_to_evaluate_sin(string question, decimal answer)
+        {
+            var mathExpression = new MathExpression(question);
+            var actual = mathExpression.Evaluate();
+            Assert.That(actual,
+                Is.LessThanOrEqualTo(answer + (decimal) 0.0000001)
+                    .And.GreaterThanOrEqualTo(answer - (decimal) 0.0000001));
         }
 
         [Test]

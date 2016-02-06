@@ -31,7 +31,7 @@ namespace MathExpressionEvaluator.Parser
                 }
                 else if (IsCloseParentheses(item))
                 {
-                    DumpUntilOpenParentheses(stack, postfix);
+                    DumpUntilThenDiscardOpenParentheses(stack, postfix);
                 }
                 else if (IsExponent(item) || IsMultiplicationOrDivision(item) || IsAdditionOrSubtraction(item))
                 {
@@ -53,21 +53,11 @@ namespace MathExpressionEvaluator.Parser
             stack.Push(item);
         }
 
-        private static void DumpUntilOpenParentheses(Stack<string> stack, ICollection<string> postfix)
-        {
-            while (!IsOpenParentheses(stack.Peek()))
-            {
-                postfix.Add(stack.Pop());
-            }
-
-            stack.Pop();
-        }
-
         private static void ProcessItem(string item, Stack<string> stack, ICollection<string> postfix)
         {
             if (stack.Any() && !IsHigherPrecedence(item, stack.Peek()))
             {
-                DumpFullStack(stack, postfix);
+                DumpUntilOpenParentheses(stack, postfix);
             }
 
             AddToStack(item, stack);
@@ -75,7 +65,25 @@ namespace MathExpressionEvaluator.Parser
 
         private static void DumpFullStack(Stack<string> stack, ICollection<string> postfix)
         {
-            while (stack.Any())
+            while (stack.Any() && stack.Any())
+            {
+                postfix.Add(stack.Pop());
+            }
+        }
+
+        private static void DumpUntilThenDiscardOpenParentheses(Stack<string> stack, ICollection<string> postfix)
+        {
+            DumpUntilOpenParentheses(stack, postfix);
+
+            if (stack.Any())
+            {
+                stack.Pop();
+            }
+        }
+
+        private static void DumpUntilOpenParentheses(Stack<string> stack, ICollection<string> postfix)
+        {
+            while (stack.Any() && !IsOpenParentheses(stack.Peek()))
             {
                 postfix.Add(stack.Pop());
             }
@@ -118,7 +126,7 @@ namespace MathExpressionEvaluator.Parser
 
         private static bool IsExponent(string @operator)
         {
-            return @operator == Symbol.Power || @operator == Symbol.SquareRoot;
+            return @operator == Symbol.Power || @operator == Symbol.Sin || @operator == Symbol.SquareRoot;
         }
 
         private static bool IsMultiplicationOrDivision(string @operator)
