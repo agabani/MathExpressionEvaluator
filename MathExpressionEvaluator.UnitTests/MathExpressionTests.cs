@@ -15,6 +15,8 @@ namespace MathExpressionEvaluator.UnitTests
         }
 
         [Test]
+        [TestCase("2 * 3 + 5", 11)]
+        [TestCase("2 + 3 * 5", 17)]
         [TestCase("(5 + 3) * 12 / 3", 32)]
         [TestCase("(5 + 3 ^ 2) * 12 / 3", 56)]
         public void Should_be_able_to_evaluate_bodmas(string question, decimal answer)

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using MathExpressionEvaluator.Common;
 
@@ -55,7 +56,7 @@ namespace MathExpressionEvaluator.Parser
 
         private static void ProcessItem(string item, Stack<string> stack, ICollection<string> postfix)
         {
-            if (stack.Any() && !IsHigherPrecedence(item, stack.Peek()))
+            if (stack.Any() && IsLowerPrecedence(item, stack.Peek()))
             {
                 DumpUntilOpenParentheses(stack, postfix);
             }
@@ -89,29 +90,29 @@ namespace MathExpressionEvaluator.Parser
             }
         }
 
-        private static bool IsHigherPrecedence(string @this, string other)
+        private static bool IsLowerPrecedence(string @this, string other)
         {
-            if (IsOpenParentheses(@this))
-            {
-                return IsOpenParentheses(other);
-            }
-
-            if (IsExponent(@this))
+            if (IsOpenParentheses(other))
             {
                 return true;
             }
 
+            if (IsExponent(@this))
+            {
+                return false;
+            }
+
             if (IsMultiplicationOrDivision(@this))
             {
-                return IsExponent(other) || IsOpenParentheses(other);
+                return IsMultiplicationOrDivision(other) || IsExponent(other);
             }
 
             if (IsAdditionOrSubtraction(@this))
             {
-                return IsMultiplicationOrDivision(other) || IsExponent(other) || IsOpenParentheses(other);
+                return IsAdditionOrSubtraction(@other) || IsMultiplicationOrDivision(other) || IsExponent(other);
             }
 
-            return default(bool);
+            throw new NotSupportedException(@this);
         }
 
         private static bool IsOpenParentheses(string @operator)
