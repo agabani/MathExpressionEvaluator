@@ -53,11 +53,11 @@
     <Compile Include="Expressions\Unary\UnaryExpression.cs" />
     <Compile Include="Expressions\Value\ValueExpression.cs" />
     <Compile Include="MathExpression.cs" />
-    <Compile Include="Notation.cs" />
-    <Compile Include="Interpreter.cs" />
+    <Compile Include="Parser\NotationParser.cs" />
+    <Compile Include="Interpreter\PostfixInterpreter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RegexExpressionParser.cs" />
-    <Compile Include="Symbol.cs" />
+    <Compile Include="Parser\RegexExpressionParser.cs" />
+    <Compile Include="Common\Symbol.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

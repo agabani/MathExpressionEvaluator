@@ -1,14 +1,15 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using MathExpressionEvaluator.Common;
 
-namespace MathExpressionEvaluator
+namespace MathExpressionEvaluator.Parser
 {
-    internal class Notation
+    internal class NotationParser
     {
         private IReadOnlyList<string> _infix;
         private IReadOnlyList<string> _postfix;
 
-        internal Notation(string expression)
+        internal NotationParser(string expression)
         {
             Expression = expression;
         }

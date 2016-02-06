@@ -1,23 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
 using MathExpressionEvaluator.Expressions;
+using MathExpressionEvaluator.Parser;
 
-namespace MathExpressionEvaluator
+namespace MathExpressionEvaluator.Interpreter
 {
-    internal class Interpreter
+    internal class PostfixInterpreter
     {
-        private static Interpreter _interpreter;
+        private static PostfixInterpreter _postfixInterpreter;
 
-        private Interpreter()
+        private PostfixInterpreter()
         {
         }
 
-        internal static Interpreter Accessor()
+        internal static PostfixInterpreter Accessor()
         {
-            return _interpreter ?? (_interpreter = new Interpreter());
+            return _postfixInterpreter ?? (_postfixInterpreter = new PostfixInterpreter());
         }
 
-        internal Expression Interpret(Notation notation)
+        internal Expression Interpret(NotationParser notation)
         {
             var expressionFactory = ExpressionFactory.Accessor();
 

@@ -1,4 +1,4 @@
-﻿namespace MathExpressionEvaluator
+﻿namespace MathExpressionEvaluator.Common
 {
     internal static class Symbol
     {

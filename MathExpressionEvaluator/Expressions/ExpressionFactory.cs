@@ -1,4 +1,5 @@
 ﻿using System;
+using MathExpressionEvaluator.Common;
 using MathExpressionEvaluator.Expressions.Binary.Concrete;
 using MathExpressionEvaluator.Expressions.Unary.Concrete;
 using MathExpressionEvaluator.Expressions.Value;

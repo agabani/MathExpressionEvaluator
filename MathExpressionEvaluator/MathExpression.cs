@@ -1,4 +1,7 @@
-﻿namespace MathExpressionEvaluator
+﻿using MathExpressionEvaluator.Interpreter;
+using MathExpressionEvaluator.Parser;
+
+namespace MathExpressionEvaluator
 {
     public class MathExpression
     {
@@ -13,7 +16,8 @@
         public decimal Evaluate()
         {
             return (decimal)
-                (_evaluation ?? (_evaluation = Interpreter.Accessor().Interpret(new Notation(_expression)).Evaluate()));
+                (_evaluation ??
+                 (_evaluation = PostfixInterpreter.Accessor().Interpret(new NotationParser(_expression)).Evaluate()));
         }
     }
 }
