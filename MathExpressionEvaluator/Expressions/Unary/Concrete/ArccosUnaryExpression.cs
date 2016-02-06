@@ -11,7 +11,7 @@ namespace MathExpressionEvaluator.Expressions.Unary.Concrete
 
         internal override decimal Evaluate()
         {
-            return (decimal)Math.Acos((double)Expression.Evaluate());
+            return (decimal) Math.Acos((double) Expression.Evaluate());
         }
     }
 }
