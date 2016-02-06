@@ -2,14 +2,14 @@
 
 namespace MathExpressionEvaluator.Expressions.Unary.Concrete
 {
-    public class SquareRootUnaryExpression : UnaryExpression
+    internal class SquareRootUnaryExpression : UnaryExpression
     {
-        public SquareRootUnaryExpression(Expression expression)
+        internal SquareRootUnaryExpression(Expression expression)
             : base(expression)
         {
         }
 
-        public override decimal Evaluate()
+        internal override decimal Evaluate()
         {
             return (decimal) Math.Sqrt((double) Expression.Evaluate());
         }

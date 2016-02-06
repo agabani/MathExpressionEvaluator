@@ -1,6 +1,6 @@
 ﻿namespace MathExpressionEvaluator.Expressions.Binary
 {
-    public abstract class BinaryExpression : Expression
+    internal abstract class BinaryExpression : Expression
     {
         protected Expression Expression1;
         protected Expression Expression2;

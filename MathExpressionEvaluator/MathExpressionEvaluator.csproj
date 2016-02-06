@@ -51,6 +51,7 @@
     <Compile Include="Expressions\Unary\Concrete\NotUnaryExpression.cs" />
     <Compile Include="Expressions\Unary\Concrete\SquareRootUnaryExpression.cs" />
     <Compile Include="Expressions\Unary\UnaryExpression.cs" />
+    <Compile Include="Expressions\Value\ValueExpression.cs" />
     <Compile Include="MathExpression.cs" />
     <Compile Include="Notation.cs" />
     <Compile Include="Interpreter.cs" />

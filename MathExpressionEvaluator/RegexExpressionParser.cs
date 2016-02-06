@@ -4,7 +4,7 @@ using System.Text.RegularExpressions;
 
 namespace MathExpressionEvaluator
 {
-    public class RegexExpressionParser
+    internal class RegexExpressionParser
     {
         private const string Numeric = "-?\\d+(\\.\\d+)?";
         private const string Variable = "\\$[a-zA-Z][a-zA-Z0-9]*";
@@ -19,12 +19,12 @@ namespace MathExpressionEvaluator
         {
         }
 
-        public static RegexExpressionParser Accessor()
+        internal static RegexExpressionParser Accessor()
         {
             return _regexExpressionParser ?? (_regexExpressionParser = new RegexExpressionParser());
         }
 
-        public IReadOnlyList<string> Parse(string expression)
+        internal IReadOnlyList<string> Parse(string expression)
         {
             return (from object match in Regex.Matches(expression) select match.ToString()).ToList();
         }

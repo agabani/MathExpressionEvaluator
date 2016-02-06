@@ -1,13 +1,13 @@
 ﻿namespace MathExpressionEvaluator.Expressions.Unary.Concrete
 {
-    public class NotUnaryExpression : UnaryExpression
+    internal class NotUnaryExpression : UnaryExpression
     {
-        public NotUnaryExpression(Expression expression)
+        internal NotUnaryExpression(Expression expression)
             : base(expression)
         {
         }
 
-        public override decimal Evaluate()
+        internal override decimal Evaluate()
         {
             return -Expression.Evaluate();
         }

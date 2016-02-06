@@ -1,6 +1,6 @@
 ﻿namespace MathExpressionEvaluator.Expressions.Unary
 {
-    public abstract class UnaryExpression : Expression
+    internal abstract class UnaryExpression : Expression
     {
         protected Expression Expression;
 

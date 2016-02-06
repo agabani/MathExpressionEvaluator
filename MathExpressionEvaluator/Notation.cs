@@ -3,20 +3,19 @@ using System.Linq;
 
 namespace MathExpressionEvaluator
 {
-    public class Notation
+    internal class Notation
     {
         private IReadOnlyList<string> _infix;
         private IReadOnlyList<string> _postfix;
 
-        public Notation(string expression)
+        internal Notation(string expression)
         {
             Expression = expression;
         }
 
-        public IReadOnlyList<string> Infix => _infix ?? (_infix = RegexExpressionParser.Accessor().Parse(Expression));
-        public IReadOnlyList<string> Postfix => _postfix ?? (_postfix = ToPostfix(Infix));
-
-        public string Expression { get; }
+        internal IReadOnlyList<string> Infix => _infix ?? (_infix = RegexExpressionParser.Accessor().Parse(Expression));
+        internal IReadOnlyList<string> Postfix => _postfix ?? (_postfix = ToPostfix(Infix));
+        internal string Expression { get; }
 
         private static IReadOnlyList<string> ToPostfix(IEnumerable<string> infix)
         {
@@ -81,7 +80,7 @@ namespace MathExpressionEvaluator
             }
         }
 
-        public static bool IsHigherPrecedence(string @this, string other)
+        private static bool IsHigherPrecedence(string @this, string other)
         {
             if (IsOpenParentheses(@this))
             {
@@ -121,12 +120,12 @@ namespace MathExpressionEvaluator
             return @operator == Symbol.Power || @operator == Symbol.SquareRoot;
         }
 
-        public static bool IsMultiplication(string @operator)
+        private static bool IsMultiplication(string @operator)
         {
             return @operator == Symbol.Multiplication || @operator == Symbol.Division;
         }
 
-        public static bool IsAddition(string @operator)
+        private static bool IsAddition(string @operator)
         {
             return @operator == Symbol.Addition || @operator == Symbol.Subtraction;
         }

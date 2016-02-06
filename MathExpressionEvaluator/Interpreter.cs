@@ -4,7 +4,7 @@ using MathExpressionEvaluator.Expressions;
 
 namespace MathExpressionEvaluator
 {
-    public class Interpreter
+    internal class Interpreter
     {
         private static Interpreter _interpreter;
 
@@ -12,12 +12,12 @@ namespace MathExpressionEvaluator
         {
         }
 
-        public static Interpreter Accessor()
+        internal static Interpreter Accessor()
         {
             return _interpreter ?? (_interpreter = new Interpreter());
         }
 
-        public Expression Interpret(Notation notation)
+        internal Expression Interpret(Notation notation)
         {
             var expressionFactory = ExpressionFactory.Accessor();
 

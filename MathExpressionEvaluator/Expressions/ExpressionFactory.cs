@@ -1,10 +1,11 @@
 ﻿using System;
 using MathExpressionEvaluator.Expressions.Binary.Concrete;
 using MathExpressionEvaluator.Expressions.Unary.Concrete;
+using MathExpressionEvaluator.Expressions.Value;
 
 namespace MathExpressionEvaluator.Expressions
 {
-    public class ExpressionFactory
+    internal class ExpressionFactory
     {
         private static ExpressionFactory _expressionFactory;
 
@@ -12,12 +13,12 @@ namespace MathExpressionEvaluator.Expressions
         {
         }
 
-        public static ExpressionFactory Accessor()
+        internal static ExpressionFactory Accessor()
         {
             return _expressionFactory ?? (_expressionFactory = new ExpressionFactory());
         }
 
-        public int RequiredOperands(string @operator, int availableOperands)
+        internal int RequiredOperands(string @operator, int availableOperands)
         {
             decimal value;
 
@@ -43,12 +44,12 @@ namespace MathExpressionEvaluator.Expressions
             }
         }
 
-        public Expression Create(string @operator)
+        internal Expression Create(string @operator)
         {
             return new ValueExpression(decimal.Parse(@operator));
         }
 
-        public Expression Create(string @operator, Expression operand)
+        internal Expression Create(string @operator, Expression operand)
         {
             switch (@operator)
             {
@@ -61,7 +62,7 @@ namespace MathExpressionEvaluator.Expressions
             }
         }
 
-        public Expression Create(string @operator, Expression operand2, Expression operand1)
+        internal Expression Create(string @operator, Expression operand2, Expression operand1)
         {
             switch (@operator)
             {
