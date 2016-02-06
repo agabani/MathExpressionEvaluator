@@ -32,9 +32,11 @@ namespace MathExpressionEvaluator.UnitTests
         }
 
         [Test]
+        [TestCase("$e", Math.E)]
+        [TestCase("-$e", -Math.E)]
         [TestCase("pi", Math.PI)]
         [TestCase("-pi", -Math.PI)]
-        public void Should_be_able_to_evaluate_Pi(string question, decimal answer)
+        public void Should_be_able_to_evaluate_constants(string question, decimal answer)
         {
             Assert.That(new MathExpression(question).Evaluate(), Is.EqualTo(answer));
         }

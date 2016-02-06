@@ -9,6 +9,7 @@
         internal const string CloseParentheses = ")";
         internal const string Cos = "cos";
         internal const string Division = "/";
+        internal const string E = "$e";
         internal const string Multiplication = "*";
         internal const string OpenParentheses = "(";
         internal const string Pi = "pi";

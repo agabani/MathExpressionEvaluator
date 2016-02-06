@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using MathExpressionEvaluator.Common;
 using MathExpressionEvaluator.Expressions.Binary.Concrete;
 using MathExpressionEvaluator.Expressions.Unary.Concrete;
@@ -30,6 +31,7 @@ namespace MathExpressionEvaluator.Expressions
 
             switch (@operator)
             {
+                case Symbol.E:
                 case Symbol.Pi:
                     return 0;
                 case Symbol.Arccos:
@@ -64,6 +66,8 @@ namespace MathExpressionEvaluator.Expressions
 
             switch (@operator)
             {
+                case Symbol.E:
+                    return new EExpression();
                 case Symbol.Pi:
                     return new PiExpression();
                 default:
