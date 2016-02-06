@@ -126,7 +126,9 @@ namespace MathExpressionEvaluator.Parser
 
         private static bool IsExponent(string @operator)
         {
-            return @operator == Symbol.Arccos || @operator == Symbol.Cos
+            return @operator == Symbol.Arccos
+                   || @operator == Symbol.Arcsin
+                   || @operator == Symbol.Cos
                    || @operator == Symbol.Power
                    || @operator == Symbol.Sin
                    || @operator == Symbol.SquareRoot
