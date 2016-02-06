@@ -1,4 +1,4 @@
-# Math Expression Evalutor
+# Math Expression Evaluator
 >  A lightweight C# math expression evaluator with lazy parsing and solving, support for standard order of operations and commonly used functions.
 
 ## Examples
