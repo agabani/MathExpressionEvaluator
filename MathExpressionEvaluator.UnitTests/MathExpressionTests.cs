@@ -74,6 +74,9 @@ namespace MathExpressionEvaluator.UnitTests
         [TestCase("tan(pi/4)", 1)]
         [TestCase("tan(pi)", 0)]
         [TestCase("tan(3*pi/4)", -1)]
+        [TestCase("arccos(1)", 0)]
+        [TestCase("arccos(0)", Math.PI/2)]
+        [TestCase("arccos(-1)", Math.PI)]
         public void Should_be_able_to_evaluate_trigonometry(string question, decimal answer)
         {
             var mathExpression = new MathExpression(question);
