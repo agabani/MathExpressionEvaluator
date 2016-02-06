@@ -33,6 +33,7 @@ namespace MathExpressionEvaluator.UnitTests
 
         [Test]
         [TestCase("pi", Math.PI)]
+        [TestCase("-pi", -Math.PI)]
         public void Should_be_able_to_evaluate_Pi(string question, decimal answer)
         {
             Assert.That(new MathExpression(question).Evaluate(), Is.EqualTo(answer));
