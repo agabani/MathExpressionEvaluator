@@ -126,7 +126,7 @@ namespace MathExpressionEvaluator.Parser
 
         private static bool IsExponent(string @operator)
         {
-            return @operator == Symbol.Power || @operator == Symbol.Sin || @operator == Symbol.SquareRoot;
+            return @operator == Symbol.Cos || @operator == Symbol.Power || @operator == Symbol.Sin || @operator == Symbol.SquareRoot;
         }
 
         private static bool IsMultiplicationOrDivision(string @operator)

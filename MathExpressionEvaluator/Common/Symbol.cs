@@ -4,6 +4,7 @@
     {
         internal const string Addition = "+";
         internal const string CloseParentheses = ")";
+        internal const string Cos = "cos";
         internal const string Division = "/";
         internal const string Multiplication = "*";
         internal const string OpenParentheses = "(";

@@ -23,6 +23,20 @@ namespace MathExpressionEvaluator.UnitTests
         }
 
         [Test]
+        [TestCase("cos(0)", 1)]
+        [TestCase("cos(pi/2)", 0)]
+        [TestCase("cos(pi)", -1)]
+        [TestCase("cos(3*pi/2)", 0)]
+        public void Should_be_able_to_evaluate_cos(string question, decimal answer)
+        {
+            var mathExpression = new MathExpression(question);
+            var actual = mathExpression.Evaluate();
+            Assert.That(actual,
+                Is.LessThanOrEqualTo(answer + (decimal)0.00000000000001)
+                    .And.GreaterThanOrEqualTo(answer - (decimal)0.00000000000001));
+        }
+
+        [Test]
         [TestCase("0", 0)]
         [TestCase("1", 1)]
         [TestCase("-1", -1)]
@@ -56,8 +70,8 @@ namespace MathExpressionEvaluator.UnitTests
             var mathExpression = new MathExpression(question);
             var actual = mathExpression.Evaluate();
             Assert.That(actual,
-                Is.LessThanOrEqualTo(answer + (decimal) 0.0000001)
-                    .And.GreaterThanOrEqualTo(answer - (decimal) 0.0000001));
+                Is.LessThanOrEqualTo(answer + (decimal) 0.00000000000001)
+                    .And.GreaterThanOrEqualTo(answer - (decimal) 0.00000000000001));
         }
 
         [Test]

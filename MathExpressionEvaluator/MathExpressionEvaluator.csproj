@@ -48,6 +48,7 @@
     <Compile Include="Expressions\Binary\Concrete\PowerBinaryExpression.cs" />
     <Compile Include="Expressions\Binary\Concrete\SubtractionBinaryExpression.cs" />
     <Compile Include="Expressions\ExpressionFactory.cs" />
+    <Compile Include="Expressions\Unary\Concrete\CosUnaryExpression.cs" />
     <Compile Include="Expressions\Unary\Concrete\NotUnaryExpression.cs" />
     <Compile Include="Expressions\Unary\Concrete\SquareRootUnaryExpression.cs" />
     <Compile Include="Expressions\Unary\Concrete\SinUnaryExpression.cs" />

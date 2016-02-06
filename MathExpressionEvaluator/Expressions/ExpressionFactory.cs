@@ -32,6 +32,7 @@ namespace MathExpressionEvaluator.Expressions
             {
                 case Symbol.Pi:
                     return 0;
+                case Symbol.Cos:
                 case Symbol.Sin:
                 case Symbol.SquareRoot:
                     return 1;
@@ -70,6 +71,8 @@ namespace MathExpressionEvaluator.Expressions
         {
             switch (@operator)
             {
+                case Symbol.Cos:
+                    return new CosUnaryExpression(operand);
                 case Symbol.Sin:
                     return new SinUnaryExpression(operand);
                 case Symbol.SquareRoot:
