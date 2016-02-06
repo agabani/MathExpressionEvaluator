@@ -69,7 +69,7 @@ namespace MathExpressionEvaluator.Expressions
             switch (@operator)
             {
                 case Symbol.E:
-                    return new EExpression();
+                    return new NaturalExpression();
                 case Symbol.Pi:
                     return new PiExpression();
                 default:
@@ -82,27 +82,27 @@ namespace MathExpressionEvaluator.Expressions
             switch (@operator)
             {
                 case Symbol.Arccos:
-                    return new ArccosUnaryExpression(operand);
+                    return new InverseCosineUnaryExpression(operand);
                 case Symbol.Arcsin:
-                    return new ArcsinUnaryExpression(operand);
+                    return new InverseSineUnaryExpression(operand);
                 case Symbol.Arctan:
-                    return new ArctanUnaryExpression(operand);
+                    return new InverseTangentUnaryExpression(operand);
                 case Symbol.Cos:
-                    return new CosUnaryExpression(operand);
+                    return new CosineUnaryExpression(operand);
                 case Symbol.Lg:
-                    return new LgUnaryExpression(operand);
+                    return new Log2UnaryExpression(operand);
                 case Symbol.Ln:
                     return new LnUnaryExpression(operand);
                 case Symbol.Log:
-                    return new LogUnaryExpression(operand);
+                    return new Log10UnaryExpression(operand);
                 case Symbol.Sin:
-                    return new SinUnaryExpression(operand);
+                    return new SineUnaryExpression(operand);
                 case Symbol.SquareRoot:
                     return new SquareRootUnaryExpression(operand);
                 case Symbol.Subtraction:
                     return new NotUnaryExpression(operand);
                 case Symbol.Tan:
-                    return new TanUnaryExpression(operand);
+                    return new TangentUnaryExpression(operand);
                 default:
                     throw new NotSupportedException(@operator);
             }

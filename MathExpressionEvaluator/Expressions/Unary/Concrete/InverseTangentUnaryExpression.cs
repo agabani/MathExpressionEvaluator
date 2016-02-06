@@ -2,9 +2,9 @@
 
 namespace MathExpressionEvaluator.Expressions.Unary.Concrete
 {
-    internal class ArctanUnaryExpression : UnaryExpression
+    internal class InverseTangentUnaryExpression : UnaryExpression
     {
-        internal ArctanUnaryExpression(Expression expression)
+        internal InverseTangentUnaryExpression(Expression expression)
             : base(expression)
         {
         }

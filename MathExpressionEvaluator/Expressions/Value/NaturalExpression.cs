@@ -2,7 +2,7 @@
 
 namespace MathExpressionEvaluator.Expressions.Value
 {
-    internal sealed class EExpression : Expression
+    internal sealed class NaturalExpression : Expression
     {
         internal override decimal Evaluate()
         {

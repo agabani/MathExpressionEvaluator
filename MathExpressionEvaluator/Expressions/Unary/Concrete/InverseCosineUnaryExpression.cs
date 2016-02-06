@@ -2,16 +2,16 @@
 
 namespace MathExpressionEvaluator.Expressions.Unary.Concrete
 {
-    internal class LgUnaryExpression : UnaryExpression
+    internal class InverseCosineUnaryExpression : UnaryExpression
     {
-        internal LgUnaryExpression(Expression expression)
+        internal InverseCosineUnaryExpression(Expression expression)
             : base(expression)
         {
         }
 
         internal override decimal Evaluate()
         {
-            return (decimal) Math.Log((double) Expression.Evaluate(), 2);
+            return (decimal) Math.Acos((double) Expression.Evaluate());
         }
     }
 }

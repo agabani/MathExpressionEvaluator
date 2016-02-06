@@ -2,9 +2,9 @@
 
 namespace MathExpressionEvaluator.Expressions.Unary.Concrete
 {
-    internal class ArcsinUnaryExpression : UnaryExpression
+    internal class InverseSineUnaryExpression : UnaryExpression
     {
-        internal ArcsinUnaryExpression(Expression expression)
+        internal InverseSineUnaryExpression(Expression expression)
             : base(expression)
         {
         }

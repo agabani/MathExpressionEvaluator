@@ -2,16 +2,16 @@
 
 namespace MathExpressionEvaluator.Expressions.Unary.Concrete
 {
-    internal class SinUnaryExpression : UnaryExpression
+    internal class Log10UnaryExpression : UnaryExpression
     {
-        internal SinUnaryExpression(Expression expression)
+        internal Log10UnaryExpression(Expression expression)
             : base(expression)
         {
         }
 
         internal override decimal Evaluate()
         {
-            return (decimal) Math.Sin((double) Expression.Evaluate());
+            return (decimal) Math.Log10((double) Expression.Evaluate());
         }
     }
 }

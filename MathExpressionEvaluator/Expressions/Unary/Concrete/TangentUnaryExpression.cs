@@ -2,16 +2,16 @@
 
 namespace MathExpressionEvaluator.Expressions.Unary.Concrete
 {
-    internal class ArccosUnaryExpression : UnaryExpression
+    internal class TangentUnaryExpression : UnaryExpression
     {
-        internal ArccosUnaryExpression(Expression expression)
+        internal TangentUnaryExpression(Expression expression)
             : base(expression)
         {
         }
 
         internal override decimal Evaluate()
         {
-            return (decimal) Math.Acos((double) Expression.Evaluate());
+            return (decimal) Math.Tan((double) Expression.Evaluate());
         }
     }
 }
