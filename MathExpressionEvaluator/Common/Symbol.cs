@@ -7,6 +7,7 @@
         internal const string Division = "/";
         internal const string Multiplication = "*";
         internal const string OpenParentheses = "(";
+        internal const string Pi = "PI";
         internal const string Power = "^";
         internal const string SquareRoot = "sqrt";
         internal const string Subtraction = "-";

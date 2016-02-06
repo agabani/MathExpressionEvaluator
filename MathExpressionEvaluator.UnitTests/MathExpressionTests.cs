@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using System;
+using NUnit.Framework;
 
 namespace MathExpressionEvaluator.UnitTests
 {
@@ -26,6 +27,13 @@ namespace MathExpressionEvaluator.UnitTests
         [TestCase("1", 1)]
         [TestCase("-1", -1)]
         public void Should_be_able_to_evaluate_numbers(string question, decimal answer)
+        {
+            Assert.That(new MathExpression(question).Evaluate(), Is.EqualTo(answer));
+        }
+
+        [Test]
+        [TestCase("PI", Math.PI)]
+        public void Should_be_able_to_evaluate_Pi(string question, decimal answer)
         {
             Assert.That(new MathExpression(question).Evaluate(), Is.EqualTo(answer));
         }

@@ -30,6 +30,8 @@ namespace MathExpressionEvaluator.Expressions
 
             switch (@operator)
             {
+                case Symbol.Pi:
+                    return 0;
                 case Symbol.SquareRoot:
                     return 1;
                 case Symbol.Subtraction:
@@ -47,7 +49,20 @@ namespace MathExpressionEvaluator.Expressions
 
         internal Expression Create(string @operator)
         {
-            return new ValueExpression(decimal.Parse(@operator));
+            decimal value;
+
+            if (decimal.TryParse(@operator, out value))
+            {
+                return new ValueExpression(decimal.Parse(@operator));
+            }
+
+            switch (@operator)
+            {
+                case Symbol.Pi:
+                    return new PiExpression();
+                default:
+                    throw new NotSupportedException(@operator);
+            }
         }
 
         internal Expression Create(string @operator, Expression operand)
