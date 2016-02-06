@@ -103,5 +103,13 @@ namespace MathExpressionEvaluator.UnitTests
                 Is.LessThanOrEqualTo(answer + (decimal) 0.00000000000001)
                     .And.GreaterThanOrEqualTo(answer - (decimal) 0.00000000000001));
         }
+
+        [Test]
+        [TestCase("1 + 2 * 3 -4")]
+        public void Should_not_be_able_to_evaluate_invalid_expressions(string question)
+        {
+            var exception = Assert.Throws<ArgumentException>(() => new MathExpression(question).Evaluate());
+            Assert.That(exception.Message, Is.EqualTo(question));
+        }
     }
 }

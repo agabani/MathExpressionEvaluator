@@ -42,7 +42,12 @@ namespace MathExpressionEvaluator.Interpreter
                 }
             }
 
-            return expressions.Pop();
+            if (expressions.Count == 1)
+            {
+                return expressions.Pop();
+            }
+
+            throw new ArgumentException(notation.Expression);
         }
     }
 }
