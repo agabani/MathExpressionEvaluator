@@ -34,10 +34,9 @@ namespace MathExpressionEvaluator.Parser
                 {
                     DumpUntilThenDiscardOpenParentheses(stack, postfix);
                 }
-                else if (IsExponent(item) || IsModulo(item) || IsMultiplicationOrDivision(item) ||
-                         IsAdditionOrSubtraction(item))
+                else if (IsOperator(item))
                 {
-                    ProcessItem(item, stack, postfix);
+                    ProcessOperator(item, stack, postfix);
                 }
                 else
                 {
@@ -55,14 +54,14 @@ namespace MathExpressionEvaluator.Parser
             stack.Push(item);
         }
 
-        private static void ProcessItem(string item, Stack<string> stack, ICollection<string> postfix)
+        private static void ProcessOperator(string @operator, Stack<string> stack, ICollection<string> postfix)
         {
-            if (stack.Any() && IsLowerPrecedence(item, stack.Peek()))
+            if (stack.Any() && IsLowerPrecedence(@operator, stack.Peek()))
             {
                 DumpUntilOpenParentheses(stack, postfix);
             }
 
-            AddToStack(item, stack);
+            AddToStack(@operator, stack);
         }
 
         private static void DumpFullStack(Stack<string> stack, ICollection<string> postfix)
@@ -91,34 +90,34 @@ namespace MathExpressionEvaluator.Parser
             }
         }
 
-        private static bool IsLowerPrecedence(string item, string stack)
+        private static bool IsLowerPrecedence(string @operator, string stack)
         {
             if (IsOpenParentheses(stack))
             {
                 return true;
             }
 
-            if (IsExponent(item))
+            if (IsExponent(@operator))
             {
                 return false;
             }
 
-            if (IsModulo(item))
+            if (IsModulo(@operator))
             {
                 return IsExponent(stack) || IsModulo(stack) || IsMultiplicationOrDivision(stack);
             }
 
-            if (IsMultiplicationOrDivision(item))
+            if (IsMultiplicationOrDivision(@operator))
             {
                 return IsExponent(stack) || IsModulo(stack);
             }
 
-            if (IsAdditionOrSubtraction(item))
+            if (IsAdditionOrSubtraction(@operator))
             {
                 return IsAdditionOrSubtraction(stack) || IsMultiplicationOrDivision(stack) || IsExponent(stack);
             }
 
-            throw new NotSupportedException(item);
+            throw new NotSupportedException(@operator);
         }
 
         private static bool IsOpenParentheses(string @operator)
@@ -129,6 +128,14 @@ namespace MathExpressionEvaluator.Parser
         private static bool IsCloseParentheses(string @operator)
         {
             return @operator == Symbol.CloseParentheses;
+        }
+
+        private static bool IsOperator(string item)
+        {
+            return IsExponent(item)
+                   || IsModulo(item)
+                   || IsMultiplicationOrDivision(item)
+                   || IsAdditionOrSubtraction(item);
         }
 
         private static bool IsExponent(string @operator)
