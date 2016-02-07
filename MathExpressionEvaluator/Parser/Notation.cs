@@ -15,9 +15,17 @@ namespace MathExpressionEvaluator.Parser
             Expression = expression;
         }
 
-        internal IReadOnlyList<string> Infix => _infix ?? (_infix = RegexExpressionParser.Accessor().Parse(Expression));
-        internal IReadOnlyList<string> Postfix => _postfix ?? (_postfix = ToPostfix(Infix));
-        internal string Expression { get; }
+        internal IReadOnlyList<string> Infix
+        {
+            get { return _infix ?? (_infix = RegexExpressionParser.Accessor().Parse(Expression)); }
+        }
+
+        internal IReadOnlyList<string> Postfix
+        {
+            get { return _postfix ?? (_postfix = ToPostfix(Infix)); }
+        }
+
+        internal string Expression { get; private set; }
 
         private static IReadOnlyList<string> ToPostfix(IEnumerable<string> infix)
         {
