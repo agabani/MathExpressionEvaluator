@@ -34,39 +34,39 @@ var evaluation = expression.Evaluate();
 ```
 
 ## Supported Constants
-| Name           | Symbol |
-|----------------|--------|
-| Pi             | pi     |
-| Euler's number | $e     |
+| Name           | Symbol | Usage |
+|----------------|--------|-------|
+| Pi             | pi     | pi    |
+| Euler's number | $e     | $e    |
 
 ## Supported Functions
 ### Unary Functions
-| Name               | Symbol |
-|--------------------|--------|
-| Log2               | lg     |
-| Log10              | log    |
-| Natural Log        | ln     |
-| Factorial          | !      |
-| Sine               | sin    |
-| Cosine             | cos    |
-| Tangent            | tan    |
-| Inverse Sine       | arcsin |
-| Inverse Cosine     | arccos |
-| Inverse Tangent    | arctan |
-| Hyperbolic Sine    | sinh   |
-| Hyperbolic Cosine  | cosh   |
-| Hyperbolic Tangent | tanh   |
-| Square Root        | sqrt   |
+| Name               | Symbol | Usage     |
+|--------------------|--------|-----------|
+| Log2               | lg     | lg(16)    |
+| Log10              | log    | log(16)   |
+| Natural Log        | ln     | ln(16)    |
+| Factorial          | !      | 10!       |
+| Sine               | sin    | sin(0)    |
+| Cosine             | cos    | cos(0)    |
+| Tangent            | tan    | tan(0)    |
+| Inverse Sine       | arcsin | arcsin(0) |
+| Inverse Cosine     | arccos | arccos(0) |
+| Inverse Tangent    | arctan | arctan(0) |
+| Hyperbolic Sine    | sinh   | sinh(0)   |
+| Hyperbolic Cosine  | cosh   | cosh(0)   |
+| Hyperbolic Tangent | tanh   | tanh(0)   |
+| Square Root        | sqrt   | sqrt(0)   |
 
 ### Binary functions
-| Name           | Symbol |
-|----------------|--------|
-| Addition       | +      |
-| Subtraction    | -      |
-| Multiplication | *      |
-| Division       | /      |
-| Exponentiation | ^      |
-| Modulo         | %      |
+| Name           | Symbol | Usage |
+|----------------|--------|-------|
+| Addition       | +      | 1 + 2 |
+| Subtraction    | -      | 1 - 2 |
+| Multiplication | *      | 1 * 2 |
+| Division       | /      | 1 / 2 |
+| Exponentiation | ^      | 1 ^ 2 |
+| Modulo         | %      | 1 % 2 |
 
 ## Supported Order of Operations
 | Name              | Symbol |
