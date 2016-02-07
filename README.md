@@ -1,5 +1,5 @@
 # Math Expression Evaluator
->  A lightweight C# math expression evaluator with lazy parsing and solving during runtime, designed to be easy to use, with support for standard order of operations and commonly used functions such as logarithms, trigonometry and factorials.
+>  A lightweight C# math expression evaluator with lazy parsing and solving during runtime, designed to be simple and easy to use, with support for standard order of operations and commonly used functions such as logarithms, trigonometry and factorials.
 
 ## Examples
 
